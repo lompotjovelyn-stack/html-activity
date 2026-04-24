@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structured Webpage</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+            color: white;
+        }
+
+        section {
+            display: flex;
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .main-article {
+            background-color: #ffffff;
+            padding: 20px;
+            margin-right: 20px;
+            flex: 3;
+            border-radius: 10px;
+        }
+
+        #sidebar {
+            background-color: #dddddd;
+            padding: 20px;
+            flex: 1;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        input {
+            padding: 8px;
+            margin-top: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Website</h1>
+        <p id="studentInfo"></p> <!-- A. Output here -->
+    </header>
+
+    <nav>
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+
+    <section>
+        <article class="main-article">
+            <h2>Main Article</h2>
+
+            <!-- B. Button Function -->
+            <button onclick="showAlert()">Click Me</button>
+
+            <!-- C. User Input -->
+            <h3>Enter Your Name:</h3>
+            <input type="text" id="userInput" placeholder="Type your name...">
+            <p id="displayInput"></p>
+
+            <!-- D. Event Handling -->
+            <h3>Dynamic Content:</h3>
+            <button onclick="changeText()">Change Content</button>
+            <p id="dynamicText">Original content here.</p>
+
+        </article>
+
+        <aside id="sidebar">
+            <h3>Sidebar</h3>
+            <p>Additional information here.</p>
+        </aside>
+    </section>
+
+    <footer>
+        <p>© 2026 My Website | All Rights Reserved</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // A. Variables and Output
+        let name = "Jovelyn Lompot";
+        let course = "BS Information Technology";
+
+        document.getElementById("studentInfo").innerHTML =
+            "Name: " + name + " | Course: " + course;
+
+        // B. Button Function
+        function showAlert() {
+            alert("Button clicked!");
+        }
+
+        // C. User Input (Real-time display)
+        document.getElementById("userInput").addEventListener("input", function() {
+            let inputValue = this.value;
+            document.getElementById("displayInput").innerHTML =
+                "You typed: " + inputValue;
+        });
+
+        // D. Event Handling (Change content)
+        function changeText() {
+            document.getElementById("dynamicText").innerHTML =
+                "The content has been changed!";
+        }
+    </script>
+
+</body>
+</html>
